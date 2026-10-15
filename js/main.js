@@ -14,7 +14,10 @@ console.log(searchEl);
 // Körs när formuläret skickas
 function handleSearch(event) {
     event.preventDefault();
-    console.log("Sökning gjord!");
+    // Läser sökfrasen och tar bort mellanslag
+    const searchPhrase = searchEl.value.trim();
+    console.log(searchPhrase);
 }
 
+// Lyssnar efter när formuläret ska skickas
 searchFormEl.addEventListener("submit", handleSearch);
