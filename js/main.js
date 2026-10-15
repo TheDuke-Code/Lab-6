@@ -5,11 +5,12 @@
  */
 // Hämtar sökformuläret från html
 const searchFormEl = document.getElementById("searchform");
-console.log(searchFormEl);
 
 // Hämtar sökfältet från html
 const searchEl = document.getElementById("search");
-console.log(searchEl);
+
+// Hämtar elementet för felmeddelanden
+const errorEl = document.getElementById("error");
 
 // Körs när formuläret skickas
 function handleSearch(event) {
