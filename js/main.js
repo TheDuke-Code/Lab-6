@@ -10,3 +10,11 @@ console.log(searchFormEl);
 // Hämtar sökfältet från html
 const searchEl = document.getElementById("search");
 console.log(searchEl);
+
+// Körs när formuläret skickas
+function handleSearch(event) {
+    event.preventDefault();
+    console.log("Sökning gjord!");
+}
+
+searchFormEl.addEventListener("submit", handleSearch);
