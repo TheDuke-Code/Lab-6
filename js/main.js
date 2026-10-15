@@ -18,10 +18,12 @@ function handleSearch(event) {
     // Läser sökfrasen och tar bort mellanslag
     const searchPhrase = searchEl.value.trim();
     console.log(searchPhrase);
-    
+
     // Kontrollerar så inte sökfältet är tomt
     if (searchPhrase === "") {
         errorEl.textContent = "Du måste ange en sökfras.";
+    } else {
+        errorEl.textContent = "";
     }
 }
 
