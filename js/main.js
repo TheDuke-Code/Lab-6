@@ -24,7 +24,15 @@ function handleSearch(event) {
         errorEl.textContent = "Du måste ange en sökfras.";
     } else {
         errorEl.textContent = "";
+        fetchRecipes(searchPhrase);
     }
+}
+
+// Hämta recept via API baserat på sökfrasen
+async function fetchRecipes(searchPhrase) {
+    const response = await fetch("https://dummyjson.com/recipes/search?q=" + searchPhrase);
+    const data = await response.json();
+    console.log(data);
 }
 
 // Lyssnar efter när formuläret ska skickas
