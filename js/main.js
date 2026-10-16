@@ -12,6 +12,10 @@ const searchEl = document.getElementById("search");
 // Hämtar elementet för felmeddelanden
 const errorEl = document.getElementById("error");
 
+//Hämtar recept elementet så det visas
+const recipeEl = document.getElementById("recipe");
+console.log(recipeEl);
+
 // Körs när formuläret skickas
 function handleSearch(event) {
     event.preventDefault();
@@ -32,7 +36,7 @@ function handleSearch(event) {
 async function fetchRecipes(searchPhrase) {
     const response = await fetch("https://dummyjson.com/recipes/search?q=" + searchPhrase);
     const data = await response.json();
-    console.log(data);
+    console.log(data.recipes[0].name);
 }
 
 // Lyssnar efter när formuläret ska skickas
