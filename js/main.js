@@ -12,7 +12,7 @@ const searchEl = document.getElementById("search");
 // Hämtar elementet för felmeddelanden
 const errorEl = document.getElementById("error");
 
-//Hämtar recept elementet så det visas
+// Hämtar recept elementet så det visas
 const recipeEl = document.getElementById("recipe");
 
 // Körs när formuläret skickas
@@ -40,12 +40,20 @@ async function fetchRecipes(searchPhrase) {
   console.log(data.recipes[0].name);
   displayRecipe(data.recipes[0]);
 }
+
 //Skapar och visar ett recept på sidan
 function displayRecipe(recipe) {
+
   // Skapar en rubrik med receptets namn
   const titleEl = document.createElement("h3");
   titleEl.textContent = recipe.name;
   recipeEl.appendChild(titleEl);
+
+  //Hämtar en bild på det receptet man sökt efter
+  const imageEl = document.createElement("img");
+  imageEl.src = recipe.image;
+  imageEl.alt = recipe.name;
+  recipeEl.appendChild(imageEl);
 }
 
 // Lyssnar efter när formuläret ska skickas
