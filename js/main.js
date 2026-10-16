@@ -14,7 +14,6 @@ const errorEl = document.getElementById("error");
 
 //Hämtar recept elementet så det visas
 const recipeEl = document.getElementById("recipe");
-console.log(recipeEl);
 
 // Körs när formuläret skickas
 function handleSearch(event) {
@@ -30,6 +29,7 @@ function handleSearch(event) {
         errorEl.textContent = "";
         fetchRecipes(searchPhrase);
     }
+
 }
 
 // Hämta recept via API baserat på sökfrasen
@@ -37,6 +37,11 @@ async function fetchRecipes(searchPhrase) {
     const response = await fetch("https://dummyjson.com/recipes/search?q=" + searchPhrase);
     const data = await response.json();
     console.log(data.recipes[0].name);
+
+    // Skapar en rubrik med receptets namn
+    const titleEl = document.createElement("h3");
+    titleEl.textContent = data.recipes[0].name;
+    recipeEl.appendChild(titleEl);
 }
 
 // Lyssnar efter när formuläret ska skickas
