@@ -88,8 +88,15 @@ function displayRecipe(recipe) {
   ingredientsTitleEl.textContent = "Ingredients";
   articleEl.appendChild(ingredientsTitleEl);
 
+  // Skapar en punktlist för ingredienserna
   const ingredientListEl = document.createElement("ul");
   articleEl.appendChild(ingredientListEl);
+  recipe.ingredients.forEach(function(ingredient){
+    const ingredientItemEl = document.createElement("li");
+    ingredientItemEl.textContent = ingredient;
+    ingredientListEl.appendChild(ingredientItemEl);
+
+  });
 
 // Hämtar in receptet på sidan
   recipeEl.appendChild(articleEl);
