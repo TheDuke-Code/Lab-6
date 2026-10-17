@@ -78,6 +78,11 @@ function displayRecipe(recipe) {
   cookingtimeEl.textContent = "Cooking time: " + recipe.cookTimeMinutes + " minutes";
   infoEl.appendChild(cookingtimeEl);
 
+  // Skriver ut svårighetsgraden för receptet
+  const difficultyEl = document.createElement("p");
+  difficultyEl.textContent = "Difficulty: " + recipe.difficulty;
+  infoEl.appendChild(difficultyEl);
+
 // Hämtar in receptet på sidan
   recipeEl.appendChild(articleEl);
 }
