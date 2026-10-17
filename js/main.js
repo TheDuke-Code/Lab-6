@@ -44,16 +44,32 @@ async function fetchRecipes(searchPhrase) {
 //Skapar och visar ett recept på sidan
 function displayRecipe(recipe) {
 
+    // skapar ett article element för att binda ihop receptet
+    const articleEl = document.createElement("article");
+
   // Skapar en rubrik med receptets namn
   const titleEl = document.createElement("h3");
   titleEl.textContent = recipe.name;
-  recipeEl.appendChild(titleEl);
+  articleEl.appendChild(titleEl);
 
   //Hämtar en bild på det receptet man sökt efter
   const imageEl = document.createElement("img");
   imageEl.src = recipe.image;
   imageEl.alt = recipe.name;
-  recipeEl.appendChild(imageEl);
+  articleEl.appendChild(imageEl);
+
+  // Skapar en div för receptets info
+  const infoEl = document.createElement("div");
+  infoEl.className = "recipe-info";
+  articleEl.appendChild(infoEl);
+
+  const servingsEl = document.createElement("p");
+  servingsEl.textContent = "Servings: " + recipe.servings;
+  infoEl.appendChild(servingsEl)
+
+
+// Hämtar in receptet på sidan
+  recipeEl.appendChild(articleEl);
 }
 
 // Lyssnar efter när formuläret ska skickas
