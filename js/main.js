@@ -83,6 +83,14 @@ function displayRecipe(recipe) {
   difficultyEl.textContent = "Difficulty: " + recipe.difficulty;
   infoEl.appendChild(difficultyEl);
 
+  // Skapar rubriken för ingredienserna
+  const ingredientsTitleEl = document.createElement("h4");
+  ingredientsTitleEl.textContent = "Ingredients";
+  articleEl.appendChild(ingredientsTitleEl);
+
+  const ingredientListEl = document.createElement("ul");
+  articleEl.appendChild(ingredientListEl);
+
 // Hämtar in receptet på sidan
   recipeEl.appendChild(articleEl);
 }
