@@ -97,7 +97,22 @@ function displayRecipe(recipe) {
     const ingredientItemEl = document.createElement("li");
     ingredientItemEl.textContent = ingredient;
     ingredientListEl.appendChild(ingredientItemEl);
+  });
 
+  // Skapar rubriken för instruktionerna
+  const instructionsTitleEl = document.createElement("h4");
+  instructionsTitleEl.textContent = "Instructions";
+  articleEl.appendChild(instructionsTitleEl);
+
+  // Skapar en nummerlista för instruktionerna
+  const instructionsListEl = document.createElement("ol");
+  articleEl.appendChild(instructionsListEl);
+
+  // Loopar igenom instruktionerna
+  recipe.instructions.forEach(function(instruction){
+  const instructionItemListEl = document.createElement("li");
+  instructionItemListEl.textContent = instruction;
+  instructionsListEl.appendChild(instructionItemListEl);
   });
 
 // Hämtar in receptet på sidan
