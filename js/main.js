@@ -63,10 +63,20 @@ function displayRecipe(recipe) {
   infoEl.className = "recipe-info";
   articleEl.appendChild(infoEl);
 
+  // Skriver ut antalet portioner i receptet
   const servingsEl = document.createElement("p");
   servingsEl.textContent = "Servings: " + recipe.servings;
-  infoEl.appendChild(servingsEl)
+  infoEl.appendChild(servingsEl);
 
+  // Skriver ut prep tiden för receptet
+  const preptimeEl = document.createElement("p");
+  preptimeEl.textContent = "Prep time: " + recipe.prepTimeMinutes + " minutes";
+  infoEl.appendChild(preptimeEl);
+
+  // Skriver ut tillagningstiden för receptet
+  const cookingtimeEl = document.createElement("p");
+  cookingtimeEl.textContent = "Cooking time: " + recipe.cookTimeMinutes + " minutes";
+  infoEl.appendChild(cookingtimeEl);
 
 // Hämtar in receptet på sidan
   recipeEl.appendChild(articleEl);
